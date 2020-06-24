@@ -25,7 +25,7 @@ public Product getProduct(@PathVariable int id){
     return productservice.getProduct(id);
 }
 
-@GetMapping("/getProducts")
+@GetMapping("/")
     public List<Product> getAllProducts(){
     return productservice.getAllProducts();
     }
