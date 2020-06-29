@@ -8,6 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Data
 @AllArgsConstructor
@@ -20,9 +23,12 @@ public class OrderDetails {
     private int id;
 
     @ManyToOne
-    private com.kazam.shopingcart.model.Product product;
-
+    @NotNull
+    private Product product;
+    @NotBlank
+    @Digits(integer=10, fraction=0)
     private int quantity;
+    @NotNull
     private double amount;
 
 }

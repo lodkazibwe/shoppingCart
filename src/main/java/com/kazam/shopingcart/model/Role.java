@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 
 @Data
 @NoArgsConstructor
@@ -19,5 +20,6 @@ public class Role {
     @Id
     @GeneratedValue
     private int id;
+    @NotBlank
     private String role;
 }

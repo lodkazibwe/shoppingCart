@@ -6,8 +6,11 @@ import com.kazam.shopingcart.service.OrdersService;
 import com.kazam.shopingcart.service.ProductService;
 import com.kazam.shopingcart.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -21,11 +24,11 @@ public class OrdersController {
     private ProductService productservice;
 
     @PostMapping("/addOrder")
-    public Orders saveOrders(@RequestBody Orders order){
+    public ResponseEntity<Orders> saveOrders(@Valid @RequestBody Orders order){
 
         calculateTotals(order);
-
-        return ordersservice.saveOrders(order);
+        ordersservice.saveOrders(order);
+        return new ResponseEntity<>(order, HttpStatus.OK);
 
 
     }
