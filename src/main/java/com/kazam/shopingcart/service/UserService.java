@@ -9,6 +9,7 @@ public interface UserService {
     User getUser(int id);
     List<User> getAllUsers();
     User getUserByAddress(String address);
+    User getUserByUserName(String userName);
     User deleteUser(int id);
     User updateUser(int id);
 

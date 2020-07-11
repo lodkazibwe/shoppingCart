@@ -25,7 +25,7 @@ public class OrderDetails {
     @ManyToOne
     @NotNull
     private Product product;
-    @NotBlank
+    @NotNull
     @Digits(integer=10, fraction=0)
     private int quantity;
     @NotNull

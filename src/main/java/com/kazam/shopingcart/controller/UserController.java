@@ -5,6 +5,8 @@ import com.kazam.shopingcart.model.Role;
 import com.kazam.shopingcart.model.User;
 import com.kazam.shopingcart.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @RestController
+@RequestMapping("/api/user")
 public class UserController {
     @Autowired
     UserService userService;
@@ -22,11 +25,16 @@ public class UserController {
     BCryptPasswordEncoder passwordEncoder;
 
     @PostMapping("/addUser")
-    public User addUser(@Valid @RequestBody User user){
+    public ResponseEntity<User> addUser(@Valid @RequestBody User user){
+        User userExists=userService.getUserByUserName(user.getUserName());
+        if(userExists!=null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         String pwd=user.getPassword();
         String encryptPWD=passwordEncoder.encode(pwd);
         user.setPassword(encryptPWD);
-        return userService.addUser(user);
+        userService.addUser(user);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
     @PostMapping("/signUP")
@@ -41,7 +49,7 @@ public class UserController {
         return userService.addUser(user);
     }
 
-    @GetMapping("/getUser/{id}")
+   @GetMapping("/getUser/{id}")
     public User getUser(@PathVariable int id){
         return userService.getUser(id);
     }

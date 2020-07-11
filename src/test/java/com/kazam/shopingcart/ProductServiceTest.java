@@ -36,7 +36,7 @@ public class ProductServiceTest {
     public void saveProductTest(){
         Product product=new Product(6,"USB","Electronics",5000.0,40);
         when(productRepository.save(product)).thenReturn(product);
-        assertEquals(product, productRepository.save(product));
+        assertEquals(product, productService.saveProduct(product));
 
     }
     @Test

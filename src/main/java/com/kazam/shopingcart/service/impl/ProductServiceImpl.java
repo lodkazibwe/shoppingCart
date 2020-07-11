@@ -19,7 +19,8 @@ public Product saveProduct(Product product){
 }
 
     public Product getProduct(int id){
-        return productrepository.findById(id).orElse(null);
+
+    return productrepository.findById(id).orElse(null);
     }
     public List<Product> getAllProducts(){
         return productrepository.findAll();

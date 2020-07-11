@@ -26,10 +26,10 @@ public class Product {
     private String name;
     @NotEmpty
     private String category;
-    @NotBlank
+    @NotNull
     @Digits(integer = 10, fraction = 2)
     private double unitPrice;
-    @NotBlank
+    @NotNull
     @Digits(integer=10, fraction=0)
     private int quantity;
 

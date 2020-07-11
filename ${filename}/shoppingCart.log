@@ -1,0 +1,35 @@
+[TRACE] 2020-07-10 12:10:20.459 [restartedMain] org.springframework.beans.BeanUtils - No property editor [org.springframework.boot.logging.LogLevelEditor] found for type org.springframework.boot.logging.LogLevel according to 'Editor' suffix convention
+[INFO ] 2020-07-10 12:10:20.739 [restartedMain] org.springframework.boot.StartupInfoLogger - Starting ShopingcartApplication on ponidoreen with PID 20648 (C:\Users\joeko\IdeaProjects\shopingcart\target\classes started by joe in C:\Users\joeko\IdeaProjects\shopingcart)
+[INFO ] 2020-07-10 12:10:20.751 [restartedMain] org.springframework.boot.SpringApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2020-07-10 12:10:21.005 [restartedMain] org.springframework.boot.logging.DeferredLog - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 2020-07-10 12:10:21.006 [restartedMain] org.springframework.boot.logging.DeferredLog - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 2020-07-10 12:10:23.038 [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+[INFO ] 2020-07-10 12:10:23.299 [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 243ms. Found 5 JPA repository interfaces.
+[INFO ] 2020-07-10 12:10:25.259 [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+[INFO ] 2020-07-10 12:10:25.285 [restartedMain] org.apache.juli.logging.DirectJDKLog - Initializing ProtocolHandler ["http-nio-8080"]
+[INFO ] 2020-07-10 12:10:25.287 [restartedMain] org.apache.juli.logging.DirectJDKLog - Starting service [Tomcat]
+[INFO ] 2020-07-10 12:10:25.288 [restartedMain] org.apache.juli.logging.DirectJDKLog - Starting Servlet engine: [Apache Tomcat/9.0.36]
+[INFO ] 2020-07-10 12:10:25.706 [restartedMain] org.apache.juli.logging.DirectJDKLog - Initializing Spring embedded WebApplicationContext
+[INFO ] 2020-07-10 12:10:25.707 [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4699 ms
+[INFO ] 2020-07-10 12:10:26.164 [restartedMain] org.springframework.scheduling.concurrent.ExecutorConfigurationSupport - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2020-07-10 12:10:26.621 [task-1] org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+[WARN ] 2020-07-10 12:10:26.827 [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 2020-07-10 12:10:26.843 [task-1] org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.17.Final
+[INFO ] 2020-07-10 12:10:27.414 [task-1] org.hibernate.annotations.common.reflection.java.JavaReflectionManager - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+[INFO ] 2020-07-10 12:10:27.657 [restartedMain] org.springframework.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1d7775, org.springframework.security.web.context.SecurityContextPersistenceFilter@5579450b, org.springframework.security.web.header.HeaderWriterFilter@7eb9549e, org.springframework.security.web.authentication.logout.LogoutFilter@5b923fe3, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4cd6ee68, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1560250, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@a78d163, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@27d1cee6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@23d3224a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4d50d58a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a53508f, org.springframework.security.web.session.SessionManagementFilter@39be7a7e, org.springframework.security.web.access.ExceptionTranslationFilter@763bc501, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@56c98087]
+[INFO ] 2020-07-10 12:10:27.921 [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 2020-07-10 12:10:29.209 [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 2020-07-10 12:10:29.308 [restartedMain] org.apache.juli.logging.DirectJDKLog - Starting ProtocolHandler ["http-nio-8080"]
+[INFO ] 2020-07-10 12:10:29.390 [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+[INFO ] 2020-07-10 12:10:29.401 [restartedMain] org.springframework.data.repository.config.DeferredRepositoryInitializationListener - Triggering deferred initialization of Spring Data repositories…
+[INFO ] 2020-07-10 12:10:30.883 [task-1] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 2020-07-10 12:10:30.935 [task-1] org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[INFO ] 2020-07-10 12:10:34.839 [task-1] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 2020-07-10 12:10:34.870 [task-1] org.springframework.orm.jpa.AbstractEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 2020-07-10 12:10:37.848 [restartedMain] org.springframework.data.repository.config.DeferredRepositoryInitializationListener - Spring Data repositories initialized!
+[INFO ] 2020-07-10 12:10:37.959 [restartedMain] org.springframework.boot.StartupInfoLogger - Started ShopingcartApplication in 18.34 seconds (JVM running for 24.521)
+[INFO ] 2020-07-10 12:10:51.736 [http-nio-8080-exec-2] org.apache.juli.logging.DirectJDKLog - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 2020-07-10 12:10:51.737 [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2020-07-10 12:10:51.763 [http-nio-8080-exec-2] org.springframework.web.servlet.FrameworkServlet - Completed initialization in 25 ms
+[INFO ] 2020-07-10 12:10:53.948 [http-nio-8080-exec-2] com.kazam.shopingcart.controller.OrdersController - adding order...
+[INFO ] 2020-07-10 12:10:54.475 [http-nio-8080-exec-2] com.kazam.shopingcart.controller.OrdersController - order added
