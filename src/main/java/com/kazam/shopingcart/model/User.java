@@ -3,11 +3,9 @@ package com.kazam.shopingcart.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
-import java.util.List;
 import java.util.Set;
 
 @Data
@@ -19,12 +17,16 @@ public class User {
     @Id
     @GeneratedValue
     private int id;
+    @Column(unique=true)
     @NotEmpty
     @Size(min=2, message = "Product name at least two Characters")
     private String userName;
+
     @NotNull
     @Size(min=4)
     private String password;
+
+    @Column(unique=true)
     @NotNull
     @Email
     private String userEmail;

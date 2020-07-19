@@ -17,6 +17,7 @@ public class Orders {
     @Id
     @GeneratedValue
     private int id;
+    @NotNull
     private double totalAmount;
     @NotNull
     private String customerAddress;
@@ -32,7 +33,7 @@ public class Orders {
 
     @OneToMany(targetEntity = OrderDetails.class, cascade= CascadeType.ALL)
     @JoinColumn(name="order_id",referencedColumnName = "id")
-    private List<OrderDetails> orderdetails;
+    private List<OrderDetails> orderDetails;
 
 
 }

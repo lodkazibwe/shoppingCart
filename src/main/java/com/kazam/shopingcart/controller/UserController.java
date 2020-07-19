@@ -24,12 +24,16 @@ public class UserController {
     @Autowired
     BCryptPasswordEncoder passwordEncoder;
 
-    @PostMapping("/addUser")
+    @PostMapping("/addAdmin")
     public ResponseEntity<User> addUser(@Valid @RequestBody User user){
         User userExists=userService.getUserByUserName(user.getUserName());
         if(userExists!=null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+        Role role=new Role();
+        role.setRole("ADMIN");
+        Set<Role> set = Stream.of(role).collect(Collectors.toSet());
+        user.setRoles(set);
         String pwd=user.getPassword();
         String encryptPWD=passwordEncoder.encode(pwd);
         user.setPassword(encryptPWD);
@@ -37,7 +41,7 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    @PostMapping("/signUP")
+    @PostMapping("/addUser")
     public User signUp(@RequestBody User user){
         Role role=new Role();
         role.setRole("USER");
@@ -47,6 +51,25 @@ public class UserController {
         String encryptPWD=passwordEncoder.encode(pwd);
         user.setPassword(encryptPWD);
         return userService.addUser(user);
+    }
+    @PostMapping("/addRoot")
+    public ResponseEntity<User> rootUser(@Valid @RequestBody User user){
+        User root=userService.getUserByUserName("Root");
+        if(root==null){
+            Role role=new Role();
+            role.setRole("ROOT");
+            Set<Role> set = Stream.of(role).collect(Collectors.toSet());
+            user.setRoles(set);
+            user.setUserName("Root");
+            String pwd=user.getPassword();
+            String encryptPWD=passwordEncoder.encode(pwd);
+            user.setPassword(encryptPWD);
+            return new ResponseEntity<>(userService.addUser(user),
+                    HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
     }
 
    @GetMapping("/getUser/{id}")
